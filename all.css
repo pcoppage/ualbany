@@ -205,7 +205,7 @@ input, textarea, select {
 	border: none;
 }
 #nav a {
-	display: block;
+	/*display: block;*/
 	color: #ebe6f0;
 	height: 58px;
 	overflow: hidden;
@@ -465,10 +465,13 @@ input, textarea, select {
 	border: none;
 }
 /* Added .news-block li>div>img below Aug 2012 */
-.news-block li>img, .news-block li>.visual-box, .news-block li>div>img, .news-block li>div>a>img {
-	float: left;
-	margin: 1px 10px 0 0;
+@media(min-width: 481px){
+	.news-block li>img, .news-block li>.visual-box, .news-block li>div>img, .news-block li>div>a>img {
+		float: left;
+		margin: 1px 10px 0 0;
+	}
 }
+
 .news-block li>.visual-box {
 	margin-bottom: 1px;
 }
@@ -860,4 +863,65 @@ ul.bottomspace li {
 	padding-bottom:1px;
 	background:#D2D2D2;
 	width:210px;
+}
+
+/*MOBILE FIRST*/
+
+@media(max-width: 480px){ /*Small Version*/
+	.mask{
+		display: none;
+	}
+	.side-menu{
+		display: none;
+	}
+	.calendar{
+		display: none;
+	}
+	.heading-block{
+		display: none;
+	}
+	#nav{
+		background: none;
+	}
+	#nav a{
+		color: black;
+		background: white;
+	}
+	#nav li{
+		float: none;
+		background: none;
+		border-radius: 2px;
+		list-style: none;
+		text-align: center;
+	}
+	body{
+		background: white;
+		min-width: 0;
+	}
+	*{
+		background: none;
+		max-width: 480px;
+		text-align: center;
+		float: none;
+	}
+	.logo{
+		display: none;
+	}
+	.row{
+		display: none;
+	}
+	.submenu{
+		display: none;
+	}
+	.news-block{
+		float: none;
+	}
+}
+@media(min-width: 481px){
+	#nav a{
+		display: block;
+	}
+	*{
+		max-width: 970px;
+	}
 }
